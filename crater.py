@@ -25,6 +25,23 @@ class Detection:
         cda = pycda.CDA()
         prediction = cda.get_prediction(image, verbose = True)
         prediction.show()
+    
+    def getImageToDraw(self):
+        layout = [  [sg.Text('Filename')],
+            [sg.Input(), sg.FileBrowse()], 
+            [sg.OK(), sg.Cancel()]] 
+
+        window = sg.Window('Get filenameT', layout)
+
+        event, values = window.read()
+        print(values['Browse'])
+        value = values['Browse']
+        print(value)
+        #return value
+        window.close()
+        return value
+
+        #image = load_image(values["-IN-"])
 """
 import PySimpleGUI as sg
 sg.theme("DarkTeal2")
