@@ -5,6 +5,7 @@ import crater
 
 dt = crater.Detection()
 
+
 # Making The Blank Image
 image = cv2.imread(dt.getImageToDraw())
 #image = cv2.imread('/home/user1/Desktop/Capstone/BeerMartianCrater.jpg')
@@ -14,7 +15,7 @@ iy = 0
 # Adding Function Attached To Mouse Callback
 def draw(event,x,y,flags,params):
     dt = crater.Detection()
-    global ix,iy,drawing, image
+    global ix,iy,drawing
     # Left Mouse Button Down Pressed
     if(event==1):
         drawing = True

@@ -1,7 +1,8 @@
 import PySimpleGUI as sg
 import crater
+import draw
 
-dt = crater.Detection()
+dt1 = crater.Detection()
 
 import PySimpleGUI as sg
 
@@ -20,8 +21,8 @@ import PySimpleGUI as sg
 def func():
     print("Hola")
 
-layout = [[sg.Text('To run crater detection, press the open image and run prediction buttonn')],
-          [sg.Button('Open Image and Run Prediction'), sg.Button('Detect on Sample Image'), sg.Exit()] ]
+layout = [[sg.Text('To run crater detection, press the open image and run prediction button')],
+          [sg.Button('Open Image and Run Prediction'), sg.Button('Detect on Sample Image'), sg.Button('Draw'), sg.Exit()] ]
 
 window = sg.Window('Crater Detector', layout, font=("Roboto", 12), size=(1000, 400), finalize=True)
 
@@ -30,7 +31,9 @@ while True:             # Event Loop
     if event in (None, 'Exit'):
         break
     if event == 'Open Image and Run Prediction':
-        dt.getImage()
+        dt1.getImage()
     elif event == 'Detect on Sample Image':
-        dt.showImage()
+        dt1.showImage()
+    elif event == 'Draw':
+        draw.openDraw()
 window.Close()
