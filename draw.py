@@ -51,6 +51,6 @@ def openDraw():
                     break
 
             cv2.destroyAllWindows()
-        except:
-            print()
+        except Exception as e:
+            print(e)
     
